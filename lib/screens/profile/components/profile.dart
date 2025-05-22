@@ -172,7 +172,49 @@ class _ProfileState extends State<Profile> {
                 ],
               ),
 
-              
+              const SizedBox(height: 30),
+              sectionTitle("Alamat Manual"),
+              Container(
+                decoration: BoxDecoration(
+                  color: pastel,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                padding: const EdgeInsets.all(12),
+                child: TextField(
+                  controller: _addressController,
+                  style: TextStyle(color: textColor),
+                  decoration: InputDecoration(
+                    labelText: "Tulis alamat secara manual (opsional)",
+                    labelStyle: TextStyle(color: textColor.withOpacity(0.7)),
+                    border: InputBorder.none,
+                    icon: const Icon(Icons.edit_location_alt, color: Colors.black54),
+                  ),
+                  maxLines: 2,
+                ),
+              ),
+
+              const SizedBox(height: 40),
+              Center(
+                child: ElevatedButton.icon(
+                  onPressed: () {
+                    final alamatManual = _addressController.text;
+                    final alamatAkhir = alamatDipilih ?? alamatManual;
+
+                    print("Alamat disimpan: $alamatAkhir");
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text("Profil berhasil disimpan")),
+                    );
+                  },
+                  icon: const Icon(Icons.save),
+                  label: const Text("Simpan Profil"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: pastel,
+                    foregroundColor: Colors.black,
+                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 14),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
