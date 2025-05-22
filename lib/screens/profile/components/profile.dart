@@ -57,7 +57,62 @@ class _ProfileState extends State<Profile> {
         title: const Text("Profil", style: TextStyle(color: Colors.white)),
         centerTitle: true,
       ),
-      
+      body: Padding(
+        padding: const EdgeInsets.all(kDefaultPadding),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              sectionTitle("Foto Profil"),
+              Center(
+                child: Stack(
+                  children: [
+                    CircleAvatar(
+                      radius: 60,
+                      backgroundColor: kPrimaryColor.withOpacity(0.1),
+                      backgroundImage:
+                          _imageFile != null ? FileImage(_imageFile!) : null,
+                      child: _imageFile == null
+                          ? const Icon(Icons.person, size: 60, color: Colors.white)
+                          : null,
+                    ),
+                    Positioned(
+                      bottom: 0,
+                      right: 0,
+                      child: PopupMenuButton<String>(
+                        onSelected: (value) {
+                          if (value == 'camera') {
+                            _pickFromCamera();
+                          } else {
+                            _pickFromGallery();
+                          }
+                        },
+                        itemBuilder: (context) => [
+                          const PopupMenuItem(
+                            value: 'camera',
+                            child: Text("Ambil dari Kamera"),
+                          ),
+                          const PopupMenuItem(
+                            value: 'gallery',
+                            child: Text("Ambil dari Galeri"),
+                          ),
+                        ],
+                        child: const CircleAvatar(
+                          radius: 18,
+                          backgroundColor: Colors.white,
+                          child: Icon(Icons.edit, size: 18, color: Colors.black),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+            
+            ],
+          ),
+        ),
+      ),
     );
   }
 
