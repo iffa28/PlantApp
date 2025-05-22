@@ -28,7 +28,17 @@ class _ProfileState extends State<Profile> {
     }
   }
 
- 
+  Future<void> _pickFromCamera() async {
+    final result = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const CameraPage()),
+    );
+    if (result != null && result is File) {
+      setState(() {
+        _imageFile = result;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
