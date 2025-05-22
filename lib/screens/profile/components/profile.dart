@@ -41,6 +41,12 @@ class _ProfileState extends State<Profile> {
   }
 
   @override
+  void dispose() {
+    _addressController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final Color pastel = const Color(0xFFFDEAE7); // pastel peach
     final Color textColor = Colors.black87;
