@@ -108,7 +108,71 @@ class _ProfileState extends State<Profile> {
                 ),
               ),
 
-            
+              const SizedBox(height: 30),
+              sectionTitle("Alamat dari Peta"),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Alamat container
+                  Expanded(
+                    child: alamatDipilih != null
+                        ? Container(
+                            padding: const EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade100,
+                              border: Border.all(color: Colors.grey),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Icon(Icons.location_on, size: 18, color: Colors.black54),
+                                const SizedBox(width: 6),
+                                Expanded(
+                                  child: Text(
+                                    alamatDipilih!,
+                                    style: const TextStyle(fontSize: 13),
+                                  ),
+                                ),
+                                GestureDetector(
+                                  onTap: () => setState(() => alamatDipilih = null),
+                                  child: const Icon(Icons.close, size: 18, color: Colors.black45),
+                                ),
+                              ],
+                            ),
+                          )
+                        : const Text("Belum ada alamat"),
+                  ),
+                  const SizedBox(width: 12),
+
+                  // Tombol pilih peta
+                  ElevatedButton.icon(
+                    onPressed: () async {
+                      final result = await Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const MapPage()),
+                      );
+                      if (result != null && result is String) {
+                        setState(() {
+                          alamatDipilih = result;
+                        });
+                      }
+                    },
+                    icon: const Icon(Icons.map_outlined, size: 20),
+                    label: const Text("Peta"),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: pastel,
+                      foregroundColor: Colors.black,
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+              
             ],
           ),
         ),
