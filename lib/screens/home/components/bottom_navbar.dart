@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:plantapp/constraint.dart';
+import 'package:plantapp/screens/profile/components/profile.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({
@@ -29,7 +30,12 @@ class BottomNavBar extends StatelessWidget {
         children: [
           IconButton(onPressed: (){}, icon: SvgPicture.asset("assets/icons/home.svg")),
           IconButton(onPressed: (){}, icon: SvgPicture.asset("assets/icons/love.svg")),
-          IconButton(onPressed: (){}, icon: SvgPicture.asset("assets/icons/profile.svg")), 
+          IconButton(onPressed: (){
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Profile()),
+              );
+          }, icon: SvgPicture.asset("assets/icons/profile.svg")), 
         ],
       ),
     
