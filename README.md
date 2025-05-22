@@ -1,16 +1,10 @@
-# plantapp
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://github.com/user-attachments/assets/cb5dca4c-9ef8-4b8a-912b-045c595885f3" width="250"/>
+<img src="https://github.com/user-attachments/assets/f8ed0a07-0214-4223-b035-84a115871973" width="250"/>
+<img src="https://github.com/user-attachments/assets/0e505630-182e-4a17-9d74-db038dfd6ca9" width="250"/>
+<img src="https://github.com/user-attachments/assets/86abc349-fc41-4421-83c4-1034ebc3fa87" width="250"/>
+<img src="https://github.com/user-attachments/assets/ed88b97b-8a33-4386-83c3-8d75175074be" width="250"/>
+<img src="https://github.com/user-attachments/assets/9da5c389-a0d4-465f-bf79-a969194c8f89" width="250"/>
+<img src="https://github.com/user-attachments/assets/41244f24-26c7-4cf8-85ad-641ec98c86aa" width="250"/>
+<img src="https://github.com/user-attachments/assets/63258d37-a204-4e88-bc77-19dbc2cdba66" width="250"/>
+<img src="https://github.com/user-attachments/assets/35fed2ea-4842-40e8-974b-345f8b61b01a" width="250"/>
+<img src="https://github.com/user-attachments/assets/32c98aac-a316-47c9-98fc-6089a4479168" width="250"/>
