@@ -18,7 +18,17 @@ class _ProfileState extends State<Profile> {
   final _addressController = TextEditingController();
   String? alamatDipilih;
 
-  
+  Future<void> _pickFromGallery() async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+    if (pickedFile != null) {
+      setState(() {
+        _imageFile = File(pickedFile.path);
+      });
+    }
+  }
+
+ 
 
   @override
   Widget build(BuildContext context) {
